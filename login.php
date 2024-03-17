@@ -19,37 +19,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Superglobale $_POST : tableau associatif
 
     $email = $_POST ['email'];
-    echo $prenom, $nom, $email;
+    $pseudo = $_POST ['pseudo'];
+    $mdp = $_POST ['mdp'];
 
     // Validation des données
-    if (empty($prenom)) {
-        $erreurs['prenom'] = "Le prénom est obligatoire";
-    }
-    if (empty($nom)) {
-        $erreurs['nom'] = "Le nom est obligatoire";
+    if (empty($pseudo)) {
+        $erreurs['pseudo'] = "Le pseudo est obligatoire";
     }
     if (empty($email)) {
-        $erreurs['email'] = "L'email est obligatoire";
+        $erreurs['email_utilisateur'] = "Le email est obligatoire";
+    }
+    if (empty($mdp)) {
+        $erreurs['mdp_utilisateur'] = "Le mdp est obligatoire";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erreurs['email'] = "L'email n'est pas valide";
     }
-    if (empty($mdp)) {
-        $erreurs['mdp'] = "le mot de passe est incorrect";
-    }
+    var_dump($erreurs);
 
     // Traiter les données
     if (empty($erreurs)) {
         // Traitement des données (insertion dans une base de données)
         // Rediriger l'utilisateur vers une autre page du site (souvent la page d'acceuil)
-        $requete = $pdo->prepare(query: "INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo_utilisateur`, `email_utilisateur`, `mdp_utilisateur`) VALUES (None, '?', '?', '?')");
-        $requete->bindParam(1, $pseudo_utilisateur);
-        $requete->bindParam(2, $email_utilisateur);
-        $requete->bindParam(3, $mdp_utilisateur);
-
+        $requete = $pdo->prepare(query: "INSERT INTO `utilisateur` (`pseudo_utilisateur`, `email_utilisateur`, `mdp_utilisateur`) VALUES (:pseudo, :email, :mdp)");
+        $requete->bindParam(':pseudo', $pseudo);
+        $requete->bindParam(':email', $email);
+        $requete->bindParam(':mdp', $mdp);
+        var_dump($erreurs);
         $requete->execute();
 
         $utilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
-        $idUtilisateur = $connexionPDO->lastInsertId();
+        $idUtilisateur = $pdo->lastInsertId();
         header("Location: ../index.php");
         exit();
     }
@@ -59,30 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../assets/css/vapor-bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         body {
             font-family: 'Gluten', cursive;
         }
     </style>
-    <title>Document</title>
+    <title>Filmosphère</title>
 </head>
-<body>
+<body class="bg-dark">
 <!--Insertion d'un menu-->
-<h1>Formulaire</h1>
-<div class="w-50 mx-auto shadow p-4 bg-primary">
+<h1 class="text-center text-white">Formulaire</h1>
+<div class="w-50 mx-auto shadow p-4 bg-secondary">
     <form action="" method="post" novalidate>
         <div class="mb-3">
             <label for="pseudo" class="form-label">Pseudo*</label>
