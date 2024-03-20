@@ -1,0 +1,3 @@
+<?php
+$film["duree"];
+?>
