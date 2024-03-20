@@ -10,6 +10,7 @@ function getfilm(){
 // Un enregistrement = un tableau associatif
     $films = $requete->fetchAll(PDO::FETCH_ASSOC);
 }
-require_once '../base.php';
+require_once '../../base.php';
+require_once BASE_PROJET . '/src/config/db-config.php';
 
 ?>

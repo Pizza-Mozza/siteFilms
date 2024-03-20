@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc77fcf7-c117-485a-a1e6-b4e0fbd239ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/base.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_partials/dureefilm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_partials/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_partials/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/user.db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bootstrap-tp1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_partials/menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/fight_club.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/formation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/html-css-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/plagiat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/yourname.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/db-config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion.php.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/detailfilm.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/detailfilm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recup-param.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_partials/listefilm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitefilm.php" beforeDir="false" afterPath="$PROJECT_DIR$/sitefilm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/db-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/db-config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/film-db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/film-db.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710941017689</updated>
-      <workItem from="1710941018669" duration="11029000" />
+      <workItem from="1710941018669" duration="11366000" />
     </task>
     <servers />
   </component>
