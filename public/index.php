@@ -42,7 +42,7 @@ require_once BASE_PROJET .
         <div class="container ">
             <!-- Votre code -->
             <div class="row text-center  ">
-                <?php foreach ($films as $film) : ?>
+                getfilm();
                     <div class="card border-dark  mb-3 me-2 bg-light-subtle " style="max-width: 20rem;">
                         <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
                             <h4 class="card-title "><img class="w-100" src="<?= $film["image"] ?>" alt=""</h4>
@@ -55,7 +55,6 @@ require_once BASE_PROJET .
 
                         </div>
                     </div>
-                <?php endforeach; ?>
             </div>
         </div>
     </div>
