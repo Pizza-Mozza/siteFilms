@@ -6,6 +6,8 @@
  * @var PDO $pdo
  */
 require './config/db-config.php';
+require_once 'header.php';
+
 
 // 2. Préparation de la requête
 $requete = $pdo->prepare(query: "SELECT * FROM film");
@@ -28,16 +30,26 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <title>Filmosphère</title>
 </head>
-<body class=" bg-secondary">
+<body class=" bg-dark-subtle">
+<h1 class="text-center"><i class="bi bi-camera-reels-fill"></i> Bienvenue sur Filmosphère ! <i class="bi bi-camera-reels-fill"></i></h1>
+<h3 class="text-center">Dernières sorties </h3>
+<div class=" rounded-4 p-3 flex-fill">
+    <div class="container ">
+        <!-- Votre code -->
+        <div class="row text-center  ">
+            <p><i class="bi bi-camera-reels"></i> quoikoubekistant <i class="bi bi-camera-reels"></i></p>
+        </div>
+    </div>
+</div>
 <div class="d-flex mt-2">
     <div class=" rounded-4 p-3 flex-fill">
         <div class="container ">
             <!-- Votre code -->
             <div class="row text-center  ">
                 <?php foreach ($films as $film) : ?>
-                    <div class="card border-dark  mb-3 me-2" style="max-width: 20rem;">
-                        <div class="card-body">
-                            <h4 class="card-title"><img src="<?= $film["image"] ?>" alt=""</h4>
+                    <div class="card border-dark  mb-3 me-2 bg-light-subtle " style="max-width: 20rem;">
+                        <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+                            <h4 class="card-title "><img class="w-100" src="<?= $film["image"] ?>" alt=""</h4>
                             <p class="card-text"><?= $film["titre"] ?></p>
                             <p> <?= $film["duree"] . " minutes" ?></p>
                             <p class="card-text">
