@@ -7,8 +7,11 @@ if (isset($_GET['id_film'])) {
     $id_film = $_GET['id_film'];
 
 // 1. Connexion à la base de donnée db_intro
-    require './config/db-config.php';
-
+require_once '../base.php';
+require_once BASE_PROJET .
+    '/src/config/db-config.php';
+require_once BASE_PROJET .
+    '/src/_partials/header.php';
 // 2. Préparation de la requête
     $requete = $pdo->prepare(query: "SELECT * FROM film WHERE id_film = :id");
 

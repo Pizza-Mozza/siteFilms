@@ -13,8 +13,6 @@ if (isset($authOK)) {
 }
 else { ?>
     <p>Vous n'avez pas été reconnu(e)</p>
-    <p><a href="login.php">Nouvel essai</p>
-<?php } ?>
-
+    <p><a href="public/login.php">Nouvel essai</p>
 </body>
 </html>

@@ -5,10 +5,11 @@
 /**
  * @var PDO $pdo
  */
-require './config/db-config.php';
-require_once 'header.php';
-
-
+require_once '../base.php';
+require_once BASE_PROJET .
+    '/src/config/db-config.php';
+require_once BASE_PROJET .
+    '/src/_partials/header.php';
 // 2. Préparation de la requête
 $requete = $pdo->prepare(query: "SELECT * FROM film");
 
@@ -31,7 +32,7 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
     <title>Filmosphère</title>
 </head>
 <body class=" bg-dark-subtle">
-<h1 class="text-center"><i class="bi bi-camera-reels-fill"></i> Bienvenue sur Filmosphère ! <i class="bi bi-camera-reels-fill"></i></h1>
+<h1 class="text-center mt-3">Bienvenue sur Filmosphère !</h1>
 <h3 class="text-center">Dernières sorties </h3>
 <div class=" rounded-4 p-3 flex-fill">
     <div class="container ">
@@ -61,7 +62,25 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 <?php endforeach; ?>
             </div>
-
-
+        </div>
+    </div>
+</div>
+<footer>
+    <section id="contact" class="bg-dark text-white">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col col-6 col-lg-6">
+                    <img class="img-fluid w-25" src="assets/images/plagiat.jpg" alt="">
+                </div>
+                <div class="col col-6 col-lg-6">
+                    <h2 class="text-center">Contact</h2>
+                    <p class="text-center"><i class="bi bi-telephone-fill"></i> 07 69 70 71 72</p>
+                    <p class="text-center"><i class="bi bi-envelope-at-fill"></i>filmosphere@lorem.com</p>
+                    <p class="text-center">Nous rejoindre:<a href="https://www.francetravail.fr/accueil/" target="_blank">J'adore le travail !!!</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
 </body>
 </html>

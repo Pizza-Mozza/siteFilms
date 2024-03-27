@@ -5,8 +5,11 @@
 /**
  * @var PDO $pdo
  */
-require './config/db-config.php';
-require_once 'header.php';
+require_once '../base.php';
+require_once BASE_PROJET .
+    '/src/config/db-config.php';
+require_once BASE_PROJET .
+    '/src/_partials/header.php';
 
 $erreurs = [];
 $pseudo_utilisateur="";
@@ -79,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $utilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
         $idUtilisateur = $pdo->lastInsertId();
-        header("Location: ../index.php");
+        header("Location: ../public/index.php");
         exit();
     }
 }
@@ -88,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Filmosphère</title>
 </head>
@@ -157,4 +160,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </form>
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>

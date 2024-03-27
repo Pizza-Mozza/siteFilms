@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c6f3ec1-4c89-426c-813b-647e1e546fb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_48_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_48__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonctions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_partials/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_partials/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/db-config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bootstrap-tp1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_partials/menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fight_club.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/formation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/html-css-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/plagiat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/yourname.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db-config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/fonctions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fight_club.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fight_club.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/yourname.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/yourname.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/plagiat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plagiat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/yourname.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/yourname.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recup-param.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/recup-param.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitefilm.php" beforeDir="false" afterPath="$PROJECT_DIR$/sitefilm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yourname.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/yourname.jfif" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
+  <component name="ProjectId" id="2cMjdMcjCHJ8XJpAeZDzeGTg8CA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/chilinskim/Documents/Dossier de secours",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\TP\Projet cinema V0.1\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.php">
+    <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/login.php/index.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Projet cinema V0.1" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/public/login.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.php" />
+        <item itemvalue="PHP Script.login.php" />
+        <item itemvalue="PHPUnit.Projet cinema V0.1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c6f3ec1-4c89-426c-813b-647e1e546fb2" name="Changes" comment="" />
+      <created>1707928427413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707928427413</updated>
+      <workItem from="1707928428418" duration="835000" />
+      <workItem from="1709544137314" duration="2486000" />
+      <workItem from="1710169711043" duration="79000" />
+      <workItem from="1710169791639" duration="3110000" />
+      <workItem from="1710321144469" duration="18073000" />
+      <workItem from="1710348005920" duration="798000" />
+      <workItem from="1710419514852" duration="9000" />
+      <workItem from="1710750198411" duration="304000" />
+      <workItem from="1710774460844" duration="2380000" />
+      <workItem from="1710919389618" duration="17000" />
+      <workItem from="1710919874301" duration="2603000" />
+      <workItem from="1711523972359" duration="61000" />
+      <workItem from="1711524112046" duration="260000" />
+      <workItem from="1711530680502" duration="22000" />
+      <workItem from="1711530724359" duration="267000" />
+      <workItem from="1711531222954" duration="276000" />
+      <workItem from="1711531606387" duration="16174000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
