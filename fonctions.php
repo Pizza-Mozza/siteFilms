@@ -11,3 +11,8 @@ function pdologin(){
     $login = $requete_films->fetchAll(PDO::FETCH_ASSOC);
     return $login;
 }
+function escape($valeur)
+{
+    // Convertit les caractères spéciaux en entités HTML
+    return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+}
