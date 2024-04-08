@@ -33,11 +33,13 @@ if (isset($_POST['email']) && isset($_POST['mdp'])) {
 <?php
 if (isset($authOK)) {
     echo "<p>Vous avez été reconnu(e) en tant que " . escape($email) . "</p>";
-    echo '<a href="./public/index.php">Poursuivre vers la page d\'accueil</a>';
+    echo "<p>Vous n'êtes même pas sensé voir cette page !</p>";
+    header("Location:/index.php");
+    exit();
 }
 else { ?>
     <p>Vous n'avez pas été reconnu(e)</p>
-    <p><a href="./public/login.php">Nouvel essai</p>
+    <p><a href="/login.php">Nouvel essai</p>
 <?php } ?>
 </body>
 </html>

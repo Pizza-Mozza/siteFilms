@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Récupérer la liste des étudiants dans la table etudiant
 
 // 1. Connexion à la base de donnée db_intro
@@ -19,6 +21,10 @@ $requete->execute();
 // 4. Récupération des enregistrements
 // Un enregistrement = un tableau associatif
 $films = $requete->fetchAll(PDO::FETCH_ASSOC);
+if (isset($authOK)) {
+    echo "<p>Vous avez été reconnu(e) en tant que " . escape($email) . "</p>";
+}
+
 ?>
 
 <!doctype html>
@@ -32,7 +38,7 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
     <title>Filmosphère</title>
 </head>
 <body class=" bg-dark-subtle">
-<h1 class="text-center mt-3">Bienvenue sur Filmosphère !</h1>
+<h1 class="text-center mt-3 text-primary">Bienvenue sur Filmosphère !</h1>
 <h3 class="text-center">Dernières sorties </h3>
 <div class=" rounded-4 p-3 flex-fill">
     <div class="container ">
@@ -74,6 +80,7 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col col-6 col-lg-6">
                     <h2 class="text-center">Contact</h2>
+
                     <p class="text-center"><i class="bi bi-telephone-fill"></i> 07 69 70 71 72</p>
                     <p class="text-center"><i class="bi bi-envelope-at-fill"></i>filmosphere@lorem.com</p>
                     <p class="text-center">Nous rejoindre:<a href="https://www.francetravail.fr/accueil/" target="_blank">J'adore le travail !!!</a></p>

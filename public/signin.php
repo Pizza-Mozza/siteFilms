@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $utilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
         $idUtilisateur = $pdo->lastInsertId();
-        header("Location: ../public/index.php");
+        header("Location:/index.php");
         exit();
     }
 }

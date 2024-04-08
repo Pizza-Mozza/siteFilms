@@ -6,7 +6,7 @@ require_once BASE_PROJET .
 require_once BASE_PROJET .
     '/src/_partials/header.php';
 require_once BASE_PROJET .
-    '/fonctions.php';
+    '/public/fonctions.php';
 $_SESSION['email'] ='mc@feur.fr';
 $_SESSION['mdp'] ='X@mpp123';
 
@@ -31,7 +31,7 @@ $nom="";
 </head>
 <body>
 <h1>Connexion utilisateur</h1>
-<form action="../login_post.php" method="post">
+<form action="/login_post.php" method="post">
     <label for="email">email :</label>
     <input type="text" name="email" id="email" required />
     <label for="mdp">Mot de passe :</label>
