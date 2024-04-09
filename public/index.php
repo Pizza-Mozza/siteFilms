@@ -1,6 +1,30 @@
 <?php
 session_start();
 
+// Vérifier la connexion
+if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
+    // Afficher le contenu personnalisé
+    echo "<h1>Bienvenue " . $_SESSION['email'] . " !</h1>";
+    echo "<p>Voici votre page spéciale.</p>";
+    // Afficher des informations et des actions spécifiques à l'utilisateur
+    // ...
+
+} else {
+    // Afficher la page d'accueil standard
+    echo "<h1>Page d'accueil</h1>";
+    echo "<p>Veuillez vous connecter pour accéder à votre page spéciale.</p>";
+    // Lien vers la page de connexion
+    echo "<a href=\"login.php\">Se connecter</a>";
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: index.php"); // ou vers une page de confirmation
+    exit();
+}
+
+// ...
+
+
 // Récupérer la liste des étudiants dans la table etudiant
 
 // 1. Connexion à la base de donnée db_intro
@@ -21,9 +45,6 @@ $requete->execute();
 // 4. Récupération des enregistrements
 // Un enregistrement = un tableau associatif
 $films = $requete->fetchAll(PDO::FETCH_ASSOC);
-if (isset($authOK)) {
-    echo "<p>Vous avez été reconnu(e) en tant que " . escape($email) . "</p>";
-}
 
 ?>
 
@@ -40,6 +61,8 @@ if (isset($authOK)) {
 <body class=" bg-dark-subtle">
 <h1 class="text-center mt-3 text-primary">Bienvenue sur Filmosphère !</h1>
 <h3 class="text-center">Dernières sorties </h3>
+<h2><a href="?logout">Se déconnecter</a>
+</h2>
 <div class=" rounded-4 p-3 flex-fill">
     <div class="container ">
         <!-- Votre code -->
