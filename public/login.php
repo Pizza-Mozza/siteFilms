@@ -1,5 +1,11 @@
 <?php
 session_start();  // démarrage d'une session
+
+if (!isset($_POST['email']) && !isset($_POST['mdp'])) {
+    // Détruire la session si l'utilisateur n'a pas soumis le formulaire de connexion
+    session_destroy();
+}
+
 require_once '../base.php';
 require_once BASE_PROJET .
     '/src/config/db-config.php';

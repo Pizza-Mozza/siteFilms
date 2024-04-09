@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Non implémenté</a>
+                    <a class="nav-link" href="/ajout-filmtest.php">Ajouter des films</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login.php">Connexion</a>

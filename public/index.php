@@ -2,10 +2,17 @@
 session_start();
 
 // Vérifier la connexion
+if (!isset($_POST['email']) && !isset($_POST['mdp'])) {
+    // Détruire la session si l'utilisateur n'a pas soumis le formulaire de connexion
+    session_destroy();
+}
+
 if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
     // Afficher le contenu personnalisé
     echo "<h1>Bienvenue " . $_SESSION['email'] . " !</h1>";
     echo "<p>Voici votre page spéciale.</p>";
+    echo "<a href=\"?logout\">Se déconnecter</a>";
+
     // Afficher des informations et des actions spécifiques à l'utilisateur
     // ...
 
@@ -61,8 +68,6 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
 <body class=" bg-dark-subtle">
 <h1 class="text-center mt-3 text-primary">Bienvenue sur Filmosphère !</h1>
 <h3 class="text-center">Dernières sorties </h3>
-<h2><a href="?logout">Se déconnecter</a>
-</h2>
 <div class=" rounded-4 p-3 flex-fill">
     <div class="container ">
         <!-- Votre code -->

@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f3ec1-4c89-426c-813b-647e1e546fb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ajout-film" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ajout-filmtest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajout-film" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajout-film.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_partials/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +103,7 @@
       <workItem from="1712587098030" duration="4000" />
       <workItem from="1712587206972" duration="4387000" />
       <workItem from="1712650360730" duration="25000" />
-      <workItem from="1712651009707" duration="1568000" />
+      <workItem from="1712651009707" duration="5634000" />
     </task>
     <servers />
   </component>
