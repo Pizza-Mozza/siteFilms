@@ -1,28 +1,9 @@
 <?php
 session_start();
 
-// Vérifier la connexion
-if (!isset($_POST['email']) && !isset($_POST['mdp'])) {
-    // Détruire la session si l'utilisateur n'a pas soumis le formulaire de connexion
-    session_destroy();
-}
 
-if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
-    // Afficher le contenu personnalisé
-    echo "<h1>Bienvenue " . $_SESSION['email'] . " !</h1>";
-    echo "<p>Voici votre page spéciale.</p>";
-    echo "<a href=\"?logout\">Se déconnecter</a>";
 
-    // Afficher des informations et des actions spécifiques à l'utilisateur
-    // ...
 
-} else {
-    // Afficher la page d'accueil standard
-    echo "<h1>Page d'accueil</h1>";
-    echo "<p>Veuillez vous connecter pour accéder à votre page spéciale.</p>";
-    // Lien vers la page de connexion
-    echo "<a href=\"login.php\">Se connecter</a>";
-}
 if (isset($_GET['logout'])) {
     session_destroy();
     header("Location: index.php"); // ou vers une page de confirmation
@@ -66,16 +47,8 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
     <title>Filmosphère</title>
 </head>
 <body class=" bg-dark-subtle">
-<h1 class="text-center mt-3 text-primary">Bienvenue sur Filmosphère !</h1>
+<h1 class="text-center mt-3 text-primary">Bienvenue sur Filmosphère <?php if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {  echo $_SESSION['email'] . " !</h1>";}?></h1>
 <h3 class="text-center">Dernières sorties </h3>
-<div class=" rounded-4 p-3 flex-fill">
-    <div class="container ">
-        <!-- Votre code -->
-        <div class="row text-center  ">
-            <p><i class="bi bi-camera-reels"></i> quoikoubekistant <i class="bi bi-camera-reels"></i></p>
-        </div>
-    </div>
-</div>
 <div class="d-flex mt-2">
     <div class=" rounded-4 p-3 flex-fill">
         <div class="container ">

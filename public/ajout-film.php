@@ -1,168 +1,97 @@
 <?php
-//Déterminer si le formulaire a été soumis !!!
-//Utilisation d'une variable superglobale $_SERVER
-// $_SERVER : tableau associatif contenant des informations sur la requête
-/**
- * @var PDO $pdo
- */
+session_start();
+
+$email_utilisateur = $_SESSION['email'];
+
+
 require_once '../base.php';
-require_once BASE_PROJET .
-    '/src/config/db-config.php';
+require_once BASE_PROJET . '/src/config/db-config.php';
 require_once BASE_PROJET .
     '/src/_partials/header.php';
 
 $erreurs = [];
-$titre="";
-$email_utilisateur = "";
-$email_confirmation = "";
-$mdp_confirmation ="";
-$mdp_utilisateur ="";
-$prenom="";
-$nom="";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    //Le formulaire est soumis !
-    // Traiter les données du formulaire
     // Récupérer les valeurs saisies par l'utilisateur
-    // Superglobale $_POST : tableau associatif
-
-    $email = $_POST ['email'];
-    $pseudo = $_POST ['pseudo'];
-    $mdp = $_POST ['mdp'];
-    $mdp_confirmation = $_POST['mdp_confirmation'];
-    $email_confirmation = $_POST['email_confirmation'];
-    $email_utilisateur = $_POST['email'];
-    //hashage du mdp
-    $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
-
-    if ($email_utilisateur != $email_confirmation) {
-        $erreurs['email_confirmation'] = "Les adresses email ne correspondent pas";
-    }
-
-
+    $titre = $_POST['titre'];
+    $duree = $_POST['duree'];
+    $resume = $_POST['resume'];
+    $date_sortie = $_POST['datedesortie'];
+    $pays = $_POST['pays'];
+    $image = $_POST['image'];
     // Validation des données
-  /*  if (empty($pseudo)) {
-        $erreurs['pseudo'] = "Le pseudo est obligatoire";
+    if (empty($titre)) {
+        $erreurs['titre'] = "Le titre est obligatoire";
     }
-    if (empty($email)) {
-        $erreurs['email_utilisateur'] = "L'email est obligatoire";
-    }
-    if ($email != $email_confirmation) {
-        $erreurs['email_confirmation'] = "Les adresses email ne correspondent pas";
-    }
-    if ($mdp != $mdp_confirmation) {
-        $erreurs['mdp_confirmation'] = "Les mots de passes ne correspondent pas";
-    }
-    if (empty($mdp)) {
-        $erreurs['mdp_utilisateur'] = "Le mdp est obligatoire";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $erreurs['email'] = "L'email n'est pas valide";
-    }
-*/
-    var_dump($erreurs);
+    // Ajoutez d'autres validations selon vos besoins...
 
     // Traiter les données
     if (empty($erreurs)) {
-        // Traitement des données (insertion dans une base de données)
-        // Rediriger l'utilisateur vers une autre page du site (souvent la page d'acceuil)
-        $requete = $pdo->prepare(query: "INSERT INTO `film` (`titre`, `duree`, `resume`,`date_sortie`,`pays`,`image`) VALUES (:titre, :duree, :resume, :datedesortie, :pays, :image)");
+        // Préparation de la requête SQL
+        $requete = $pdo->prepare("INSERT INTO `film` (`titre`, `duree`, `resume`, `date_sortie`, `pays`, `image`,`email_utilisateur`) VALUES (:titre, :duree, :resume, :date_sortie, :pays, :image, :email_utilisateur)");
+        // Liaison des paramètres
         $requete->bindParam(':titre', $titre);
         $requete->bindParam(':duree', $duree);
         $requete->bindParam(':resume', $resume);
-        $requete->bindParam(':datedesortie', $date_sortie);
+        $requete->bindParam(':date_sortie', $date_sortie);
         $requete->bindParam(':pays', $pays);
         $requete->bindParam(':image', $image);
-        var_dump($erreurs);
+        $requete->bindParam(':email_utilisateur', $email_utilisateur);
+        // Exécution de la requête
         $requete->execute();
 
-        $film = $requete->fetchAll(PDO::FETCH_ASSOC);
-        $id_film = $pdo->lastInsertId();
+        // Redirection vers une autre page
         header("Location:/index.php");
         exit();
     }
 }
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Filmosphère</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ajouter un film</title>
 </head>
-<body class="bg-dark-subtle">
-<!--Insertion d'un menu-->
-<h1 class="text-center text-dark">Formulaire</h1>
-<div class="w-50 mx-auto shadow p-4 bg-light-subtle">
-    <form action="" method="post" novalidate>
-        <div class="mb-3">
-            <label for="pseudo" class="form-label">Titre</label>
-            <input type="text"
-                   class="form-control <?= (isset($erreurs['pseudo'])) ? "border border-2 border-danger" : "" ?>"
-                   id="pseudo" name="pseudo" value="<?= $pseudo_utilisateur ?>" placeholder="Saisir votre pseudo"
-                   aria-describedby="text">
-            <div id="pseudo" class="form-text">Ne choisissez pas un pseudo que vous regretterez !!!</div>
-            <?php if (isset($erreurs['pseudo'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['pseudo'] ?></p>
-            <?php endif; ?>
+<body>
+    <h1 class = "text-center">Ajouter un film</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="titre" class="form-label">Titre :</label>
+                        <input type="text" id="titre" name="titre" class="form-control">
+                        <?php if (isset($erreurs['titre'])): ?>
+                            <p class="text-danger"><?php echo $erreurs['titre']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="duree" class="form-label">Durée :</label>
+                        <input type="text" id="duree" name="duree" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="resume" class="form-label">Résumé :</label>
+                        <textarea id="resume" name="resume" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datedesortie" class="form-label">Date de sortie :</label>
+                        <input type="date" id="datedesortie" name="datedesortie" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="pays" class="form-label">Pays :</label>
+                        <input type="text" id="pays" name="pays" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="form-label">URL de l'image :</label>
+                        <input type="text" id="image" name="image" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Duree</label>
-            <input type="email"
-                   class="form-control <?= (isset($erreurs['email'])) ? "border border-2 border-danger" : "" ?>""
-            id="exampleInputEmail1" name="email" value="<?= $email_utilisateur ?>" placeholder="Saisir votre mail"
-            aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre adresse email !!!</div>
-            <?php if (isset($erreurs['email'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['email'] ?></p>
-            <?php endif; ?>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Resumé</label>
-            <input type="email"
-                   class="form-control <?= (isset($erreurs['email_confirmation'])) ? "border border-2 border-danger" : "" ?>""
-            id="exampleInputEmail1" name="email_confirmation" value="<?= $email_confirmation ?>" placeholder="Confirmez votre mail"
-            aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre adresse email !!!</div>
-            <?php if (isset($erreurs['email_confirmation'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['email_confirmation'] ?></p>
-            <?php endif; ?>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">date de sortie</label>
-            <input type="text"
-                   class="form-control <?= (isset($erreurs['mdp'])) ? "border border-2 border-danger" : "" ?>""
-            id="mdp" name="mdp" value="<?= $mdp_utilisateur ?>" placeholder="Saisir votre mot de passe"
-            aria-describedby="mdp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre mot de passe !!!</div>
-            <?php if (isset($erreurs['email'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
-            <?php endif; ?>
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Pays</label>
-            <input type="text"
-                   class="form-control <?= (isset($erreurs['mdp_confirmation'])) ? "border border-2 border-danger" : "" ?>""
-            id="mdp" name="mdp_confirmation" value="<?= $mdp_utilisateur ?>" placeholder="Saisir votre mot de passe"
-            aria-describedby="mdp_confirmation">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre mot de passe !!!</div>
-            <?php if (isset($erreurs['email'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
-            <?php endif; ?>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Image</label>
-            <input type="text"
-                   class="form-control <?= (isset($erreurs['mdp_confirmation'])) ? "border border-2 border-danger" : "" ?>""
-            id="mdp" name="mdp_confirmation" value="<?= $mdp_utilisateur ?>" placeholder="Saisir votre mot de passe"
-            aria-describedby="mdp_confirmation">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre mot de passe !!!</div>
-            <?php if (isset($erreurs['email'])): ?>
-                <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
-            <?php endif; ?>
-        </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
-</div>
-</form>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
+</html>

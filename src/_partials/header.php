@@ -1,3 +1,14 @@
+<?php
+if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
+} else {
+
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: index.php"); // ou vers une page de confirmation
+exit();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,24 +29,39 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Accueil
+                    <a class="nav-link active" href="/index.php">Accueil
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ajout-filmtest.php">Ajouter des films</a>
+                <li class="nav-link">
+                <?php
+                if (!isset($_SESSION['email']) && !isset($_SESSION['mdp'])) {
+                    // Afficher le contenu personnalisé
+                    echo "<a href='login.php'>Connexion</a>";}
+                ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login.php">Connexion</a>
+                <li class="nav-link">
+                    <?php
+                    if (!isset($_SESSION['email']) && !isset($_SESSION['mdp'])) {
+                        // Afficher le contenu personnalisé
+                        echo "<a href='signin.php'>Inscription</a>";}
+                    ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/signin.php">Inscription</a>
+                <li class="nav-link">
+                    <?php
+                    if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
+                    // Afficher le contenu personnalisé
+                    echo "<a href='ajout-film.php'>Cliquer ici pour ajouter vos films</a>";}
+                    ?>
                 </li>
+                <li class="nav-link">
+                    <?php
+                    if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
+                        // Afficher le contenu personnalisé
+                        echo "<a href=\"?logout\">Se déconnecter</a>";}?>
+                </li>
+
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-danger my-2 my-sm-0 text-dark" type="submit">Search</button>
-            </form>
         </div>
     </div>
 </nav>

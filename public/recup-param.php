@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Récupère le paramètre d'URL 'prenom'
 // Tester la présence du paramètre
 // Récupère le paramètre d'URL 'prenom'
@@ -44,7 +46,10 @@ require_once BASE_PROJET .
         </div>
         <div class="text-md-center form-control ">
         <?php
-        echo "<p>{$film['resume']}</p>"; // Assuming you have a "resume" attribute in your table
+        echo "<p>{$film['resume']}</p>";
+        echo "<p>Posté par : {$film['email_utilisateur']}</p>";
+
+        // Assuming you have a "resume" attribute in your table
     } else {
         echo "Film introuvable";
     }

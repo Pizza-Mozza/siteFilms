@@ -1,11 +1,6 @@
 <?php
-session_start();  // démarrage d'une session
-
-if (!isset($_POST['email']) && !isset($_POST['mdp'])) {
-    // Détruire la session si l'utilisateur n'a pas soumis le formulaire de connexion
-    session_destroy();
-}
-
+session_start();
+session_destroy();
 require_once '../base.php';
 require_once BASE_PROJET .
     '/src/config/db-config.php';
@@ -13,8 +8,7 @@ require_once BASE_PROJET .
     '/src/_partials/header.php';
 require_once BASE_PROJET .
     '/public/fonctions.php';
-$_SESSION['email'] ='mc@feur.fr';
-$_SESSION['mdp'] ='X@mpp123';
+
 
 /**
  * @var PDO $pdo
@@ -28,7 +22,9 @@ $mdp_confirmation ="";
 $mdp_utilisateur ="";
 $prenom="";
 $nom="";
-?>
+$_SESSION['email'] = $email_utilisateur;
+$_SESSION['mdp'] =$mdp_utilisateur;
+$mdp_no_hash = password_verify($mdp_utilisateur, PASSWORD_DEFAULT);?>
 <!doctype html>
 <html>
 <head>

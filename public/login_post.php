@@ -6,18 +6,21 @@ if (isset($_POST['email']) && isset($_POST['mdp'])) {
     require 'fonctions.php';
     $bdd = getBdd();
     // cette requête permet de récupérer l'utilisateur depuis la BD
-    $requete = "SELECT * FROM utilisateur WHERE email_utilisateur=? AND mdp_utilisateur=?";
+    $requete = "SELECT * FROM utilisateur WHERE email_utilisateur=?";
     $resultat = $bdd->prepare($requete);
     $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
-    $resultat->execute(array($email, $mdp));
+    $resultat->execute(array($email));
     if ($resultat->rowCount() == 1) {
         // l'utilisateur existe dans la table
-        // on ajoute ses infos en tant que variables de session
-        $_SESSION['email'] = $email;
-        $_SESSION['mdp'] = $mdp;
-        // cette variable indique que l'authentification a réussi
-        $authOK = true;
+        $utilisateur = $resultat->fetch();
+        // on vérifie le mot de passe avec password_verify
+        if (password_verify($_POST['mdp'], $utilisateur['mdp_utilisateur'])) {
+            // mot de passe correct
+            $_SESSION['email'] = $email;
+            $_SESSION['mdp'] = $_POST['mdp'];
+            // cette variable indique que l'authentification a réussi
+            $authOK = true;
+        }
     }
 }
 ?>

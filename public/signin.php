@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //Déterminer si le formulaire a été soumis !!!
 //Utilisation d'une variable superglobale $_SERVER
 // $_SERVER : tableau associatif contenant des informations sur la requête

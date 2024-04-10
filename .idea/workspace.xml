@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f3ec1-4c89-426c-813b-647e1e546fb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/ajout-filmtest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajout-film" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajout-film.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajout-film.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajout-filmtest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonctions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_post.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ajout-film.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajout-film.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ajout-filmtest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/recup-param.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/recup-param.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recup-param.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_partials/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_partials/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_partials/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,22 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "Z:/TP/Projet cinema V0.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Z:/TP/Projet cinema V0.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\TP\Projet cinema V0.1\public\assets\images" />
       <recent name="Z:\TP\Projet cinema V0.1\public" />
     </key>
   </component>
@@ -103,7 +116,8 @@
       <workItem from="1712587098030" duration="4000" />
       <workItem from="1712587206972" duration="4387000" />
       <workItem from="1712650360730" duration="25000" />
-      <workItem from="1712651009707" duration="5634000" />
+      <workItem from="1712651009707" duration="5670000" />
+      <workItem from="1712729023116" duration="10942000" />
     </task>
     <servers />
   </component>

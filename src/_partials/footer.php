@@ -11,7 +11,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col col-6 col-lg-6">
-                <img class="img-fluid w-50" src="chevaldelta.png" alt="">
+                <img class="img-fluid w-50" src="./assets/images/filmosphere.png" alt="">
             </div>
             <div class="col col-6 col-lg-6">
                 <h2 class="text-center">Contact</h2>
