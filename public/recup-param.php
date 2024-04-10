@@ -42,7 +42,7 @@ require_once BASE_PROJET .
     <div class=" ">
     <?php
     if ($film = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
-        <?php echo "<img src='{$film['image']}' alt='' </img>"; ?>
+        <img src="<?= $film["image"] ?>" style="width: 250px ;height:350px" </img>
         </div>
         <div class="text-md-center form-control ">
         <?php

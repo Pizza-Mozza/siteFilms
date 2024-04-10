@@ -61,7 +61,7 @@ $films = $requete->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card border-dark  mb-3 me-2 bg-light-subtle " style="max-width: 20rem;">
                         <div class="card-body shadow-lg p-3 mb-1 bg-body rounded">
                             <h4 class="card-title "><a href="recup-param.php?id_film=<?= $film['id_film'] ?>
-                        "><img class="img-fluid " src="<?= $film["image"] ?> "style="object-fit: contain" alt=""</h4>
+                        "><img class="img-fluid " src="<?= $film["image"] ?> "style="width: 250px ;height:350px" alt=""</h4>
                             <p class="card-text"><?= $film["titre"] ?></p></a>
                         </div>
                     </div>
