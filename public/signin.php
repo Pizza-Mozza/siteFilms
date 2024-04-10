@@ -89,6 +89,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+<?php if (isset($_SESSION['email'])) {
+    header("Location:../index.php");
+    exit();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -99,8 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body class="bg-dark-subtle">
 <!--Insertion d'un menu-->
-<h1 class="text-center text-dark">Formulaire</h1>
-<div class="w-50 mx-auto shadow p-4 bg-light-subtle">
+<h1 class="text-center text-dark mt-4">Formulaire</h1>
+<div class="w-50 mx-auto shadow p-4 bg-light-subtle mt-3 mb-5">
     <form action="" method="post" novalidate>
         <div class="mb-3">
             <label for="pseudo" class="form-label">Pseudo*</label>
@@ -108,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                    class="form-control <?= (isset($erreurs['pseudo'])) ? "border border-2 border-danger" : "" ?>"
                    id="pseudo" name="pseudo" value="<?= $pseudo_utilisateur ?>" placeholder="Saisir votre pseudo"
                    aria-describedby="text">
-            <div id="pseudo" class="form-text">Ne choisissez pas un pseudo que vous regretterez !!!</div>
+            <div id="pseudo" class="form-text">Ne choisissez pas un pseudo problématique ou vous serez bannis</div>
             <?php if (isset($erreurs['pseudo'])): ?>
                 <p class="form-text text-danger"><?= $erreurs['pseudo'] ?></p>
             <?php endif; ?>
@@ -119,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                    class="form-control <?= (isset($erreurs['email'])) ? "border border-2 border-danger" : "" ?>""
             id="exampleInputEmail1" name="email" value="<?= $email_utilisateur ?>" placeholder="Saisir votre mail"
             aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre adresse email !!!</div>
+            <div id="emailHelp" class="form-text"></div>
             <?php if (isset($erreurs['email'])): ?>
                 <p class="form-text text-danger"><?= $erreurs['email'] ?></p>
             <?php endif; ?>
@@ -130,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                    class="form-control <?= (isset($erreurs['email_confirmation'])) ? "border border-2 border-danger" : "" ?>""
             id="exampleInputEmail1" name="email_confirmation" value="<?= $email_confirmation ?>" placeholder="Confirmez votre mail"
             aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre adresse email !!!</div>
+            <div id="emailHelp" class="form-text"></div>
             <?php if (isset($erreurs['email_confirmation'])): ?>
                 <p class="form-text text-danger"><?= $erreurs['email_confirmation'] ?></p>
             <?php endif; ?>
@@ -141,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                    class="form-control <?= (isset($erreurs['mdp'])) ? "border border-2 border-danger" : "" ?>""
             id="mdp" name="mdp" value="<?= $mdp_utilisateur ?>" placeholder="Saisir votre mot de passe"
             aria-describedby="mdp">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre mot de passe !!!</div>
+            <div id="emailHelp" class="form-text">Votre mot de passe doit contenir une majuscule, une minuscule et un chiffre</div>
             <?php if (isset($erreurs['email'])): ?>
                 <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
             <?php endif; ?>
@@ -152,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                    class="form-control <?= (isset($erreurs['mdp_confirmation'])) ? "border border-2 border-danger" : "" ?>""
             id="mdp" name="mdp_confirmation" value="<?= $mdp_utilisateur ?>" placeholder="Saisir votre mot de passe"
             aria-describedby="mdp_confirmation">
-            <div id="emailHelp" class="form-text">Ne partagez jamais votre mot de passe !!!</div>
+            <div id="emailHelp" class="form-text">Vérifiez votre mot de passe.</div>
             <?php if (isset($erreurs['email'])): ?>
                 <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
             <?php endif; ?>
@@ -161,4 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </div>
 </form>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
+<?php
+require_once BASE_PROJET .
+'/src/_partials/footer.php';?>
 </body>

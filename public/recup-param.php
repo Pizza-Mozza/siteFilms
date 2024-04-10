@@ -36,7 +36,7 @@ require_once BASE_PROJET .
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <title>Document</title>
     </head>
-    <body class="bg-secondary">
+    <body class="bg-secondary-subtle">
     <div class="container text-center">
     <div class="row p-5 d-md-block">
     <div class=" ">
@@ -46,6 +46,8 @@ require_once BASE_PROJET .
         </div>
         <div class="text-md-center form-control ">
         <?php
+        echo "<p>{$film['titre']}</p>";
+        echo "<p>{$film['duree']} minutes</p>";
         echo "<p>{$film['resume']}</p>";
         echo "<p>Posté par : {$film['email_utilisateur']}</p>";
 
@@ -59,6 +61,11 @@ require_once BASE_PROJET .
 ?>
     </div>
     </div>
+    </div>
+
 
 </body>
-    </html>
+    <?php
+    require_once BASE_PROJET .
+        '/src/_partials/footer.php';?>
+</html>

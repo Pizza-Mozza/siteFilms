@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Filmosphère</title>
 </head>
-<body>
+<footer class="mt-4 ">
 <section id="contact" class="bg-dark text-white">
     <div class="container mt-3">
         <div class="row">
@@ -22,5 +22,5 @@
         </div>
     </div>
 </section>
-</body>
+</footer>
 </html>

@@ -25,6 +25,7 @@ $nom="";
 $_SESSION['email'] = $email_utilisateur;
 $_SESSION['mdp'] =$mdp_utilisateur;
 $mdp_no_hash = password_verify($mdp_utilisateur, PASSWORD_DEFAULT);?>
+
 <!doctype html>
 <html>
 <head>
@@ -32,12 +33,30 @@ $mdp_no_hash = password_verify($mdp_utilisateur, PASSWORD_DEFAULT);?>
     <title>Connexion</title>
 </head>
 <body>
-<h1>Connexion utilisateur</h1>
+<h1 class="text-center mb-5 mt-5">Connexion utilisateur</h1>
+<div class="w-50 mx-auto shadow p-4 bg-light-subtle mt-3 mb-5">
 <form action="/login_post.php" method="post">
+    <div class="mb-1 text-center">
     <label for="email">email :</label>
+    </div>
+    <div class="mb-3 text-center">
     <input type="text" name="email" id="email" required />
+    </div>
+    <div class="mb-1 text-center">
     <label for="mdp">Mot de passe :</label>
+    </div>
+    <div class="mb-4 text-center">
     <input type="password" name="mdp" id="mdp" required />
-    <input type="submit" value="Connexion">
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
 </form>
+</div>
+
+<p><br><br><br><br><br><br><br><br><br></p>
 </body>
+<?php
+require_once BASE_PROJET .
+    '/src/_partials/footer.php';?>
+</html>

@@ -46,7 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
+<?php if (!isset($_SESSION['email'])) {
+    header("Location:../index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Ajouter un film</title>
 </head>
 <body>
-    <h1 class = "text-center">Ajouter un film</h1>
-    <div class="container">
+    <h1 class = "text-center mt-4 mb-5">Ajouter un film</h1>
+    <div class="container mt-4 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form action="" method="post">
@@ -94,4 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </div>
 </body>
+<?php
+require_once BASE_PROJET .
+    '/src/_partials/footer.php';?>
 </html>
