@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f3ec1-4c89-426c-813b-647e1e546fb2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajout-film.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajout-filmtest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonctions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login_post.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ajout-film.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajout-film.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ajout-filmtest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/login_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login_post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/recup-param.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/recup-param.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recup-param.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_partials/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_partials/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_partials/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +102,9 @@
       <workItem from="1712587206972" duration="4387000" />
       <workItem from="1712650360730" duration="25000" />
       <workItem from="1712651009707" duration="5670000" />
-      <workItem from="1712729023116" duration="23412000" />
+      <workItem from="1712729023116" duration="24301000" />
+      <workItem from="1714399927915" duration="272000" />
+      <workItem from="1714464526477" duration="5445000" />
     </task>
     <servers />
   </component>

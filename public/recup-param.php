@@ -24,6 +24,30 @@ require_once BASE_PROJET .
     $requete->execute();
 
 // 5. Récupération du film (vérifier si trouvé)
+
+
+var_dump($erreurs);
+
+// Traiter les données
+if (empty($erreurs)) {
+    // Traitement des données (insertion dans une base de données)
+    // Rediriger l'utilisateur vers une autre page du site (souvent la page d'acceuil)
+    $requete = $pdo->prepare(query: "INSERT INTO `commentaire` (`idcommentaire`, `titre`, `avis`,`note`,`date`,`id-user`,`id-film`) VALUES (:idcommentaire, :titre, :avis,:note,:date,:iduser,:idfilm");
+    $requete->bindParam(':idcommentaire', $id_commentaire);
+    $requete->bindParam(':titre', $titre);
+    $requete->bindParam(':avis', $avis);
+    $requete->bindParam(':note', $note);
+    $requete->bindParam(':date', $date);
+    $requete->bindParam(':iduser', $iduser);
+    $requete->bindParam(':idfilm', $idfilm);
+    var_dump($erreurs);
+    $requete->execute();
+
+    $utilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
+    $idUtilisateur = $pdo->lastInsertId();
+    header("Location:/index.php");
+    exit();
+}
     ?>
 
     <!doctype html>
@@ -62,7 +86,24 @@ require_once BASE_PROJET .
     </div>
     </div>
     </div>
-
+    <div class="container text-center bg-light">
+        <div class="row p-5 d-md-block">
+        <p>Commentaires</p>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Commentaire</label>
+            </div>
+        </div>
+    </div>
 
 </body>
     <?php
