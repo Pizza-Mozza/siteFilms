@@ -17,6 +17,7 @@ if (isset($_POST['email']) && isset($_POST['mdp'])) {
         if (password_verify($_POST['mdp'], $utilisateur['mdp_utilisateur'])) {
             // mot de passe correct
             $_SESSION['email'] = $email;
+            $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur'];
             $_SESSION['mdp'] = $_POST['mdp'];
             // cette variable indique que l'authentification a réussi
             $authOK = true;

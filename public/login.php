@@ -35,7 +35,7 @@ $mdp_no_hash = password_verify($mdp_utilisateur, PASSWORD_DEFAULT);?>
 <body>
 <h1 class="text-center mb-5 mt-5">Connexion utilisateur</h1>
 <div class="w-50 mx-auto shadow p-4 bg-light-subtle mt-3 mb-5">
-<form action="/login_post.php" method="post">
+<form action="/sitefilms/public/login_post.php" method="post">
     <div class="mb-1 text-center">
     <label for="email">email :</label>
     </div>
